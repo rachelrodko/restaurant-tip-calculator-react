@@ -12,7 +12,6 @@ export default function App() {
     0,
   );
   const total = +bill + tipsTotal;
-
   function handleSubmit(e) {
     e.preventDefault();
     if (!price) return;
@@ -26,20 +25,25 @@ export default function App() {
     setNumGuests(0);
   }
 
-  function handleAddTip(newTip) {
-    setTips((tips) => [...tips, newTip]);
-  }
-  console.log(tips);
-  function handleChange(e) {
+  function handleUpdatedTips(e, i, value) {
     e.preventDefault();
+    const tipsArrayCopy = tips.slice();
     const newTip = +e.target.value;
-    handleAddTip(newTip);
+    tipsArrayCopy[i] = newTip;
+
+    //   Array.from({ length: numGuests }, (x, index) =>
+    //     index === i && x !== value ? newTip : x,
+    //   )
+    // );
+
+    setTips(tipsArrayCopy);
+    console.log(i, value);
+    console.log(tips);
   }
 
   return (
     <div style={{ marginLeft: "15px" }}>
       <h2>Restaurant Tip Calculator 🍴</h2>
-
       <Price price={price} onSubmit={handleSubmit} setPrice={setPrice} />
       <NumFriends
         numGuests={numGuests}
@@ -58,7 +62,7 @@ export default function App() {
           value={tips}
           numGuests={numGuests}
           key={i}
-          onChange={handleChange}
+          onChange={(e) => handleUpdatedTips(e, i, tips)}
         ></SelectPercentage>
       ))}
 
@@ -69,7 +73,6 @@ export default function App() {
         numGuests={numGuests}
         tipsTotal={tipsTotal}
       />
-
       <Reset onReset={handleReset} />
     </div>
   );
@@ -127,7 +130,7 @@ function SelectPercentage({ question, tips, numGuests, onChange }) {
             style={{ marginRight: "12px" }}
           >
             {question}
-          </label>
+          </label>{" "}
           <form name="servicePc" value={tips}>
             <select onChange={onChange}>
               <option value="0">Dissatisfied (0%)</option>
@@ -137,11 +140,12 @@ function SelectPercentage({ question, tips, numGuests, onChange }) {
             </select>
           </form>
         </div>
-      ) : null}
+      ) : null}{" "}
     </div>
   );
 }
-
+{
+}
 function Output({ price, total, numGuests, tipsTotal }) {
   const splitPrice = +price / numGuests;
   const splitTips = tipsTotal / numGuests;
