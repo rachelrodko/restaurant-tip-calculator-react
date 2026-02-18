@@ -144,8 +144,7 @@ function SelectPercentage({ question, tips, numGuests, onChange }) {
     </div>
   );
 }
-{
-}
+
 function Output({ price, total, numGuests, tipsTotal }) {
   const splitPrice = +price / numGuests;
   const splitTips = tipsTotal / numGuests;
