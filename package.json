@@ -1,17 +1,17 @@
 {
   "name": "bill-app",
-  "version": "0.1*",
+  "version": "0.1.0",
   "private": true,
   "homepage": "https:///rachelrodko.github.io/restaurant-tip-calculator-react",
   "dependencies": {
-    "@testing-library/dom": "^10.*",
-    "@testing-library/jest-dom": "^6.*",
-    "@testing-library/react": "^16.*",
-    "@testing-library/user-event": "^13.*",
-    "react": "^19.*",
-    "react-dom": "^19.*"
-    "react-scripts": "5.*",
-    "web-vitals": "^2.*"
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -dbuild"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +41,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.*"
+    "gh-pages": "^6.3.0"
   }
 }
