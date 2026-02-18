@@ -10,6 +10,7 @@ Once the user and input the price of the meal and the number of guests, each gue
 ## Installation
 
 To install the tip calculator run the following code in the terminal:
+
 ```bash
 $ git clone https://github.com/rachelrodko/restaurant-tip-calculator-react.git tip_calculator
 $ npm install
@@ -20,4 +21,3 @@ $ npm start
 
 I need to migrate this application to Vite as many dependencies are flagged during the installation. I also need to amend the design to make it more attractive and user-friendly. As the purpose of this project was first and foremost an exercise in React, the functionality was prioritised over the styling. This will be updated in due course.
 
-````
